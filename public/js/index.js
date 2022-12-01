@@ -1,9 +1,17 @@
-const apiButton = $('#call-api');
+const learnMoreButtons = $(`[id = "learn-more"]`);
+const modelTitle = $('#model-title');
+const modelPrice = $('#model-price');
+const modelLength = $('#model-length');
+const modelWidth = $('#model-width');
+const modelHeight = $('#model-height');
+const modelHeightWater = $('model-height-water');
+const modelDraft = $('#model-draft');
 
-const modernUrl = 'http://localhost:3001/modern-models';
-const apartUrl = 'http://localhost:3001/apartment-models';
+learnMoreButtons.on('click', function(event){
+    const modelId = event.target.getAttribute('data-id');
+    getModelsById(modelId);
 
-const modelApiUrl = 'http://localhost:3001/models'
+})
 
 function getModels(){
     fetch(`http://localhost:3001/api/models`, {
@@ -18,5 +26,5 @@ function getModelsById(id){
         method: 'GET'
     })
     .then(results => results.json())
-    .then(data => console.log(data))
+    .then(data => setHtml(data));
 }

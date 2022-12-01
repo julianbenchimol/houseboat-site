@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-app.use(express.static('public'));
+app.use('/public', express.static('../public'))
 
 const db = mysql.createConnection(
     {
@@ -33,6 +33,9 @@ app.get('/modern-models', (req, res)=>{
 //gets apartment models
 app.get('/apartment-models', (req, res)=>{
     res.sendFile(path.join(__dirname, '../public/pages/apartment-models.html'));
+})
+app.get('/model-view', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../public/pages/model-view.html'))
 })
 //API call for houseboat models
 app.get('/api/models', (req, res)=>{

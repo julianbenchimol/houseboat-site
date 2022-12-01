@@ -9,7 +9,7 @@
 		<!-- JQuery UI Stylesheet Connection -->
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
 		<!-- Default Stylesheet Connection -->
-        <link rel="stylesheet" href="../css/style.css" />
+        <link type = "text/style" rel="stylesheet" href="../css/style.css" />
     <title>Waterlodge Houseboats</title>
   </head>
 
@@ -50,7 +50,7 @@
 
     <!-- Main Grid -->
     <div>
-            <div class = "row mx-2 pt-2">
+        <div class = "row mx-2 pt-2">
             <div class = "col-12">
                 <p class="h2">Modern Models</p>
             </div>
@@ -64,13 +64,13 @@
         <div class = "row mx-2 pt-2">
             <div class = "col-6">
                 <div class = "card">
-                    <img src = "../images/modern11-thumbnail_1024x766.jpeg" class = "card-img-top">
+                    <!-- <img src = "../images/modern11-thumbnail_1024x766.jpeg" class = "card-img-top"> -->
                     <div class = "card-body">
                         <h5 class = "card-title">Modern 11</h5>
                         <p class = "card-text">
                             <p>The vessel is intended for sailing on rivers, canals, lakes and coastal waters.</p>
                         </p>
-                        <a class = "btn btn-primary" href = "#" id = "learn-more" data-model = "modern-11">Learn More</a>
+                        <a href = "/model-view" class = "btn btn-primary" id = "learn-more" data-id = "1">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                         <p class = "card-text">
                             <p>The vessel is intended for sailing on rivers, canals, lakes and coastal waters.</p>
                         </p>
-                        <a class = "btn btn-primary" href = "#" id = "learn-more" data-model = "modern-15">Learn More</a>                </div>
+                        <a class = "btn btn-primary" href = "/model-view" id = "learn-more" data-id = "2">Learn More</a>                </div>
                 </div>
             </div>
         </div>
@@ -101,8 +101,7 @@
 
 		<!-- JQuery UI Script Connection -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-
-        <script src = "../js/index.js"></script>
+        <script type = "text/javascript" src = /public/js/index.js></script>
 
     </div>
 
