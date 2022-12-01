@@ -1,12 +1,19 @@
-const modernModelButton = $('#modern-model-button');
-const apartmentModelButton = $('#apartment-model-button');
+const apiButton = $('#call-api');
 
 const modernUrl = 'http://localhost:3001/modern-models';
 const apartUrl = 'http://localhost:3001/apartment-models';
 
-modernModelButton.on('click', function(){
-    window.location = modernUrl
+const modelApiUrl = 'http://localhost:3001/models'
+
+apiButton.on('click', (event)=>{
+    event.preventDefault();
+    getModels();
 })
-apartmentModelButton.on('click', function(){
-    window.location = apartUrl;
-})
+
+function getModels(){
+    fetch(`http://localhost:3001/api/models`, {
+        method: 'GET'
+    })
+    .then(results => results.json())
+    .then(data => console.log(data))
+}
